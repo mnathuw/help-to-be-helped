@@ -1,0 +1,176 @@
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    background-image: url("charity.png");
+}
+
+
+
+#wrapper{
+    margin: 10px auto;
+    padding: 10px;
+    border: 5px grey;
+    list-style: none;
+    height: 70%;
+    display: grid;
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+}   
+    #wrapper #pageHeader{
+        font-weight: bolder;
+        font-size: 4em;
+        font-family: Courier;
+        text-align: center;
+        padding-bottom: 0px;
+    }
+
+    #wrapper nav ul{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding-left: 0px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid grey;
+            flex-wrap: wrap;
+        }
+            #wrapper nav ul li{
+                border: 2px solid black;
+                margin-left:5px;
+                padding: 5px;
+                font-size: 10px;
+
+            }
+                #wrapper nav a{
+                    font-size: 1.5em;
+                    font-weight: bold;
+                    font-family: Courier;
+                    text-decoration: none;
+                    color: black;
+                }
+
+                    #wrapper nav a:hover{
+                        color: blue;
+                    }
+
+                
+
+    #wrapper #fullPost{
+        border-top: 1px dashed lightgray;
+        width: 99%;
+        margin: 20px 10px;
+        padding: 0px;
+
+        font-size: 1.1em;
+        border-bottom: 1px dashed lightgray;
+    }
+        #fullPost .title{
+            font-weight: bold;
+            font-size: 2em;
+
+            padding-bottom: 0px;
+        }
+        #fullPost .date{
+            font-style: italic;
+            margin: 0px;
+        }
+        #fullPost .content{
+            width: 100%;
+            word-wrap: break-word;
+        }
+    #wrapper .blogPost{
+        border-bottom: 1px solid grey;
+        width: 99%;
+        margin: 20px 10px;
+        padding: 0px;
+    }
+        .blogPost p, .blogPost h1{
+            margin: 0px;
+            padding: 0px;
+        }
+        .blogPost .title{
+            font-weight: bold;
+            font-size: 2em;/*
+            color: white;*/
+        }
+        .blogPost .date{
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .blogPost .content{
+            width: 75%;
+            word-wrap: break-word;
+            margin-bottom: 10px;
+        }
+        .blogPost .more{
+            margin-bottom: 10px;
+        }
+    #wrapper footer{
+        padding-top: 10px;
+        margin-top: 10px;
+
+        text-align: center;
+    }
+
+    #wrapper #errorMessage{
+        width: 100%;
+
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+
+    #wrapper fieldset{
+        font-family: Courier;
+    }
+        #wrapper fieldset ul{
+            list-style: none;
+            margin-left: 0px;
+        }
+
+        #wrapper fieldset legend{
+            font-size: 1.5em;
+            font-weight: bolder;
+
+        }
+            #wrapper fieldset ul li{
+                margin: 10px;
+            }
+
+            #wrapper fieldset ul li label{
+                font-weight: bold;
+                font-size: 1.5em;
+                margin-right: 10px;
+            }
+
+            #wrapper fieldset ul li #content{
+                width: 80%;
+                font-family: Courier;
+            }
+
+            #wrapper fieldset ul li #submit, #delete{
+                border: 2px solid black;
+                padding: 5px;
+                
+                font-size: 1.5em;
+                font-weight: bold;
+                background-color: white;
+            }
+
+#display_comment .panel
+{
+    border-radius: 2px;
+    border: 2px solid grey;
+    margin: 20px 10px;
+}
+    #display_comment .panel-heading
+    {
+
+    border-radius: 2px;
+    border-bottom: : 2px solid grey;
+    text-decoration: underline;
+    }
+
