@@ -88,7 +88,7 @@
             <?php while($row = $statement->fetch()): ?>
 
             <div class="blogPost">
-                <h1 class="title"><?= $row['task_type'] ?></h1>
+                <h1 class="title"><a href="fullBlog.php?id=<?= $row['task_code'] ?>"><?= $row['task_type'] ?></a></h1>
                 <p class="date"><?= date("F d, Y, h:m a", strtotime($row['DatePosted'])) ?> <a href="post.php?id=<?= $row['task_code'] ?>"> Edit</a></p>
                 
                 <?php if(strlen($row['task_description']) > 200): ?>
