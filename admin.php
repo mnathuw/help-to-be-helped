@@ -3,7 +3,7 @@
     require("connect.php");
 
     //Construct SQL statement aquiring all values from newest 10 tasks.
-    $query = "SELECT * FROM task ORDER BY DatePosted DESC LIMIT 10";
+    $query = "SELECT * FROM category ORDER BY category_code DESC LIMIT 10";
 
     $statement = $db->prepare($query);
 
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="main.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <!-- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
@@ -55,58 +57,58 @@
                 <li><a href="login.php">Login</a></li>
 
             </ul>
-            <!--if no post-->
-            <?php if($statement->rowCount() <= 0 ):?>
-                <p>No task</p>
-                <p><a href="post.php">Create one...</a></p>
-            <?php endif ?>
-
-        </nav>
-
-
-
-
-        <div class="container">
-              <br />
-              <div class="card">
-                <div class="card-body">
-                  <div class="form-group">
-                    <input type="text" name="search_box" id="search_box" class="form-control" placeholder="Counselling" />
-                  </div>
-                  <div class="table-responsive" id="dynamic_content">
-                    
-                  </div>
-                </div>
-              </div>
-        </div>
-
-
             
-
-            <?php while($row = $statement->fetch()): ?>
+        <?php while($row = $statement->fetch()): ?>
 
             <div class="blogPost">
-                <h1 class="title"><a href="fullBlog.php?id=<?= $row['task_code'] ?>"><?= $row['task_type'] ?></a></h1>
-                <p class="date"><?= date("F d, Y, h:m a", strtotime($row['DatePosted'])) ?> <a href="post.php?id=<?= $row['task_code'] ?>"> Edit</a></p>
+                <h1 class="title"><?= $row['Title'] ?></h1>
+                <p class="date"><?= date("F d, Y, h:m a", strtotime($row['DatePosted'])) ?> <a href="post.php?id=<?= $row['postID'] ?>"> Edit</a></p>
                 
-                <?php if(strlen($row['task_description']) > 200): ?>
-                    <p class="content"><?= substr($row['task_description'], 0, 200) ?>...</p>
-                    <p class="more"><a href="fullBlog.php?id=<?= $row['task_code'] ?>">Read Full Post...</a></p>
+                <?php if(strlen($row['Content']) > 200): ?>
+                    <p class="content"><?= substr($row['Content'], 0, 200) ?>...</p>
+                    <p class="more"><a href="fullBlog.php?id=<?= $row['postID'] ?>">Read Full Post...</a></p>
                 
                 <?php else: ?>
-                    <p class="content"><?= $row['task_description'] ?></p>
+                    <p class="content"><?= $row['Content'] ?></p>
 
                 <?php endif ?>
 
             </div>
 
-            <?php endwhile ?>   
-    </div>
-
+        <?php endwhile ?>
 
 </body>
 </html>
 
+<!-- <script>
+$(document).ready(function(){
+    load_data();
+    function load_data(query)
+    {
+        $.ajax({
+            url:"fetch.php",
+            method:"post",
+            data:{query:query},
+            success:function(data)
+            {
+                $('#result').html(data);
+            }
+        });
+    }
+    
+    $('#search_text').keyup(function(){
+        var search = $(this).val();
+        if(search != '')
+        {
+            load_data(search);
+        }
+        else
+        {
+            load_data();            
+        }
+    });
+});
+</script> -->
 
 
 <script>
