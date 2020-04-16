@@ -1,7 +1,7 @@
 <?php 
     require("connect.php");
     require("validate.php");
-
+var_dump($_FILES);
 if(validatePost()){
     $title   = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_FULL_SPECIAL_CHARS);

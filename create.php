@@ -3,7 +3,7 @@
     require("authenticate.php");
 
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-    $query = "SELECT category_code, category_name FROM category WHERE category_code = :id";
+    $query = "SELECT categoryID, category_name FROM category WHERE categoryID = :id";
     $statement = $db->prepare($query);
     $statement->bindValue(':id', $id, PDO::PARAM_INT);
     
